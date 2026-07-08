@@ -1,0 +1,12 @@
+# ignoring node modules
+node_modules/
+
+# ignoring build files
+dist/
+build/
+# ignoring environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
