@@ -13,7 +13,7 @@ export const fr: LocaleContent = {
     journey: "Parcours",
     devops: "DevOps",
     certifications: "Certifs",
-    education: "Formation",
+    education: "Études",
     contact: "Contact",
     cv: "CV",
     downloadCv: "Télécharger CV",
@@ -380,9 +380,9 @@ export const fr: LocaleContent = {
     ],
   },
   education: {
-    chapter: "CHAPITRE 04 — FORMATION",
+    chapter: "CHAPITRE 04 — ÉTUDES",
     title: "Parcours académique",
-    subtitle: "Formation en ingénierie informatique et technologies de l'information.",
+    subtitle: "Études universitaires en ingénierie informatique et technologies de l'information.",
     data: [
       {
         id: 1,
@@ -408,7 +408,7 @@ export const fr: LocaleContent = {
         degree: "Licence Appliquée en Technologies de l'Information",
         type_label: "Licence appliquée",
         description:
-          "Institut Supérieur des Études Technologiques — formation appliquée en technologies de l'information, réseaux, administration système et fondamentaux du développement logiciel.",
+          "Institut Supérieur des Études Technologiques — cursus appliqué en technologies de l'information, réseaux, administration système et fondamentaux du développement logiciel.",
         highlights: [
           "Projet de fin d'études (PFE) : étude du réseau informatique et supervision du parc IT au CHU Habib Bourguiba (Prometheus & Grafana).",
           "Architecture réseau, administration serveurs Windows/Linux, virtualisation (VMware) et fondamentaux de la sécurité.",

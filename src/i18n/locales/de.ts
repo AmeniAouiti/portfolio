@@ -13,7 +13,7 @@ export const de: LocaleContent = {
     journey: "Werdegang",
     devops: "DevOps",
     certifications: "Zertifikate",
-    education: "Ausbildung",
+    education: "Studium",
     contact: "Kontakt",
     cv: "CV",
     downloadCv: "CV herunterladen",
@@ -380,9 +380,9 @@ export const de: LocaleContent = {
     ],
   },
   education: {
-    chapter: "KAPITEL 04 — AUSBILDUNG",
+    chapter: "KAPITEL 04 — STUDIUM",
     title: "Akademischer Werdegang",
-    subtitle: "Ingenieur- und angewandte Ausbildung in Informatik und Informationstechnologie.",
+    subtitle: "Universitäres Studium in Informatik und Informationstechnologie.",
     data: [
       {
         id: 1,
@@ -408,7 +408,7 @@ export const de: LocaleContent = {
         degree: "Angewandter Bachelor in Informationstechnologie",
         type_label: "Angewandte Licence",
         description:
-          "Höheres Institut für Technologische Studien — angewandte Ausbildung in Informationstechnologie, Netzwerken, Systemadministration und Software-Grundlagen.",
+          "Höheres Institut für Technologische Studien — angewandtes Studium in Informationstechnologie, Netzwerken, Systemadministration und Software-Grundlagen.",
         highlights: [
           "Abschlussprojekt (PFE): Netzwerkinfrastruktur-Studie und IT-Park-Überwachung am CHU Habib Bourguiba (Prometheus & Grafana).",
           "Netzwerkarchitektur, Windows/Linux-Serveradministration, Virtualisierung (VMware) und Sicherheitsgrundlagen.",
