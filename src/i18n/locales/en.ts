@@ -270,6 +270,7 @@ export const en: LocaleContent = {
     attestationClose: "Close",
     attestationLoadError: "Unable to display this document in the viewer.",
     attestationOpenNewTab: "Open in a new tab",
+    attestationLoading: "Loading document...",
     data: [
       {
         id: 1,

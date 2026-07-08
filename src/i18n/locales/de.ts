@@ -257,6 +257,7 @@ export const de: LocaleContent = {
     attestationClose: "Schließen",
     attestationLoadError: "Dieses Dokument kann in der Vorschau nicht angezeigt werden.",
     attestationOpenNewTab: "In neuem Tab öffnen",
+    attestationLoading: "Dokument wird geladen...",
     data: [
       {
         id: 1,

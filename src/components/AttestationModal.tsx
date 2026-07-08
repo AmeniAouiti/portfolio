@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ShieldCheck, Lock } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
+
+const PdfAttestationViewer = lazy(() => import("./PdfAttestationViewer"));
 
 interface AttestationModalProps {
   open: boolean;
@@ -60,8 +62,6 @@ const AttestationModal = ({ open, onClose, src, title }: AttestationModalProps) 
 
   const isImage = src ? /\.(png|jpe?g|webp|gif)$/i.test(src) : false;
   const isPdf = src ? /\.pdf$/i.test(src) : false;
-  const viewerSrc = src && isPdf ? `${src}#toolbar=0&navpanes=0&view=FitH` : src;
-
   const viewerClass = `transition-all duration-300 ${blurred ? "blur-xl" : ""}`;
 
   return (
@@ -105,11 +105,11 @@ const AttestationModal = ({ open, onClose, src, title }: AttestationModalProps) 
             </div>
 
             <div className="relative flex-1 overflow-auto bg-bg">
-              {viewerSrc && isImage && (
+              {src && isImage && !loadError && (
                 <div className="flex min-h-full items-center justify-center p-4">
                   <img
-                    key={viewerSrc}
-                    src={viewerSrc}
+                    key={src}
+                    src={src}
                     alt={title ?? t.viewAttestation}
                     draggable={false}
                     onError={() => setLoadError(true)}
@@ -118,32 +118,22 @@ const AttestationModal = ({ open, onClose, src, title }: AttestationModalProps) 
                 </div>
               )}
 
-              {viewerSrc && isPdf && !loadError && (
-                <object
-                  key={viewerSrc}
-                  data={viewerSrc}
-                  type="application/pdf"
-                  title={title ?? t.viewAttestation}
-                  className={`h-full min-h-[60vh] w-full ${viewerClass}`}
-                  onError={() => setLoadError(true)}
+              {src && isPdf && !loadError && (
+                <Suspense
+                  fallback={
+                    <div className="flex min-h-[40vh] items-center justify-center p-8 text-sm text-text-dim">
+                      {t.attestationLoading}
+                    </div>
+                  }
                 >
-                  <iframe
-                    src={viewerSrc}
-                    title={title ?? t.viewAttestation}
-                    className={`h-full min-h-[60vh] w-full ${viewerClass}`}
+                  <PdfAttestationViewer
+                    key={src}
+                    src={src}
+                    loadingLabel={t.attestationLoading}
                     onError={() => setLoadError(true)}
+                    className={viewerClass}
                   />
-                </object>
-              )}
-
-              {viewerSrc && !isImage && !isPdf && (
-                <iframe
-                  key={viewerSrc}
-                  src={viewerSrc}
-                  title={title ?? t.viewAttestation}
-                  className={`h-full min-h-[60vh] w-full ${viewerClass}`}
-                  onError={() => setLoadError(true)}
-                />
+                </Suspense>
               )}
 
               {loadError && (
@@ -162,7 +152,6 @@ const AttestationModal = ({ open, onClose, src, title }: AttestationModalProps) 
                 </div>
               )}
 
-              {/* Watermark */}
               <div className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden">
                 <span className="rotate-[-24deg] text-4xl font-bold tracking-[0.3em] text-text/5 sm:text-6xl">
                   AMENI AOUITI

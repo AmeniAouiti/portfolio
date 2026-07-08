@@ -59,6 +59,7 @@ export interface LocaleContent {
     attestationClose: string;
     attestationLoadError: string;
     attestationOpenNewTab: string;
+    attestationLoading: string;
     data: Experience[];
   };
   education: {

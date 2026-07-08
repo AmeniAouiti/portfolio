@@ -257,6 +257,7 @@ export const fr: LocaleContent = {
     attestationClose: "Fermer",
     attestationLoadError: "Impossible d'afficher ce document dans la visionneuse.",
     attestationOpenNewTab: "Ouvrir dans un nouvel onglet",
+    attestationLoading: "Chargement du document...",
     data: [
       {
         id: 1,
