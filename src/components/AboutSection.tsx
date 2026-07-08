@@ -8,19 +8,19 @@ export const AboutSection = () => {
   const t = locale.about;
 
   return (
-    <section id="about" className="relative border-t border-border bg-transparent py-20 sm:py-24">
-      <div className="mx-auto max-w-4xl px-6">
+    <section id="about" className="relative border-t border-border bg-transparent py-16 sm:py-20 md:py-24">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <ScrollReveal>
           <div className="mb-3 text-xs uppercase tracking-[3px] text-primary">{t.chapter}</div>
 
           <div className="mb-6 space-y-1">
-            <SectionTitle as="h2" className="text-4xl leading-[1.05] font-semibold tracking-tighter text-text sm:text-5xl md:text-6xl">
+            <SectionTitle as="h2" className="text-3xl leading-[1.05] font-semibold tracking-tighter text-text sm:text-4xl md:text-5xl lg:text-6xl">
               {t.title}
             </SectionTitle>
-            <SectionTitle as="h2" className="text-4xl leading-[1.05] font-semibold tracking-tighter text-text sm:text-5xl md:text-6xl">
+            <SectionTitle as="h2" className="text-3xl leading-[1.05] font-semibold tracking-tighter text-text sm:text-4xl md:text-5xl lg:text-6xl">
               {t.titleLine2}
             </SectionTitle>
-            <SectionTitle as="h2" className="text-4xl leading-[1.05] font-semibold tracking-tighter text-primary sm:text-5xl md:text-6xl">
+            <SectionTitle as="h2" className="text-3xl leading-[1.05] font-semibold tracking-tighter text-primary sm:text-4xl md:text-5xl lg:text-6xl">
               {t.titleLine3}
             </SectionTitle>
           </div>

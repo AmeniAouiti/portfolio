@@ -67,7 +67,7 @@ const AttestationModal = ({ open, onClose, src, title }: AttestationModalProps) 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-100 flex items-center justify-center p-4 sm:p-6 bg-black/75 backdrop-blur-sm"
+          className="fixed inset-0 z-[100] flex items-end justify-center bg-black/75 p-0 backdrop-blur-sm sm:items-center sm:p-4 md:p-6"
           onClick={onClose}
         >
           <motion.div
@@ -75,7 +75,7 @@ const AttestationModal = ({ open, onClose, src, title }: AttestationModalProps) 
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 20 }}
             onClick={(e) => e.stopPropagation()}
-            className="flex h-[88vh] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-2xl select-none"
+            className="flex h-[min(88dvh,100vh)] w-full max-w-3xl flex-col overflow-hidden rounded-t-3xl border border-border bg-card shadow-2xl select-none sm:rounded-3xl"
           >
             <div className="flex items-center justify-between gap-3 border-b border-border px-5 py-4">
               <div className="flex items-center gap-3">

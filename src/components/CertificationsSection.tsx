@@ -58,15 +58,15 @@ const CertificationsSection = () => {
   const t = locale.certifications;
 
   return (
-    <section id="certifications" className="relative border-t border-border bg-transparent py-28">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="mb-14">
-          <div className="uppercase tracking-[3px] text-xs mb-4 text-primary">{t.chapter}</div>
-          <SectionTitle className="mb-4 text-6xl font-semibold tracking-tighter text-text">{t.title}</SectionTitle>
-          <p className="text-text-dim max-w-2xl text-lg">{t.subtitle}</p>
+    <section id="certifications" className="relative border-t border-border bg-transparent py-16 sm:py-20 md:py-24 lg:py-28">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="mb-10 sm:mb-14">
+          <div className="mb-4 text-xs uppercase tracking-[3px] text-primary">{t.chapter}</div>
+          <SectionTitle className="mb-4 text-3xl font-semibold tracking-tighter text-text sm:text-4xl md:text-5xl lg:text-6xl">{t.title}</SectionTitle>
+          <p className="max-w-2xl text-base text-text-dim sm:text-lg">{t.subtitle}</p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
           {CERTIFICATIONS.map((cert, index) => {
             const item = t.items.find((i) => i.id === cert.id);
             if (!item) return null;

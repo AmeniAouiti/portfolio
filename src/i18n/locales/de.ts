@@ -13,6 +13,7 @@ export const de: LocaleContent = {
     journey: "Werdegang",
     devops: "DevOps",
     certifications: "Zertifikate",
+    education: "Ausbildung",
     contact: "Kontakt",
     cv: "CV",
     downloadCv: "CV herunterladen",
@@ -249,7 +250,7 @@ export const de: LocaleContent = {
     ],
   },
   experience: {
-    chapter: "KAPITEL 04 — WERDEGANG",
+    chapter: "KAPITEL 05 — WERDEGANG",
     title: "Berufserfahrung",
     viewAttestation: "Bescheinigung ansehen",
     attestationNote: "Nur zur Ansicht — Herunterladen, Drucken und Erfassen sind deaktiviert.",
@@ -375,6 +376,45 @@ export const de: LocaleContent = {
         logo: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Logo_OACA.png",
         attestation: "/certifications/oaca-attestation-stage.png",
         attestation_label: "Praktikumsbescheinigung",
+      },
+    ],
+  },
+  education: {
+    chapter: "KAPITEL 04 — AUSBILDUNG",
+    title: "Akademischer Werdegang",
+    subtitle: "Ingenieur- und angewandte Ausbildung in Informatik und Informationstechnologie.",
+    data: [
+      {
+        id: 1,
+        period: "2023 — 2026",
+        school: "ESPRIT",
+        location: "El Ghazala, Ariana",
+        degree: "Nationales Ingenieurdiplom in Informatik",
+        type_label: "Ingenieurstudium",
+        description:
+          "Private Hochschule für Ingenieurwesen und Technologie — Spezialisierung auf Software Engineering, Full-Stack-Entwicklung, verteilte Systeme und moderne Softwarearchitektur.",
+        highlights: [
+          "Abschlussprojekt (PFE): Sabeel — intelligentes digitales Ökosystem für integriertes Umrah-Service-Management (BrandWood&CO).",
+          "Mobile- & Webentwicklung, Backend-Architektur, Cloud-Deployment und Agile/Scrum-Projektmanagement.",
+          "Fokus auf skalierbare Anwendungen, DevOps-Praktiken und aufkommende Technologien (KI, Echtzeitsysteme).",
+        ],
+        logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/4/4e/Esprit_logo.svg/120px-Esprit_logo.svg.png",
+      },
+      {
+        id: 2,
+        period: "2020 — 2023",
+        school: "ISET Sfax",
+        location: "Sfax, Tunesien",
+        degree: "Angewandter Bachelor in Informationstechnologie",
+        type_label: "Angewandte Licence",
+        description:
+          "Höheres Institut für Technologische Studien — angewandte Ausbildung in Informationstechnologie, Netzwerken, Systemadministration und Software-Grundlagen.",
+        highlights: [
+          "Abschlussprojekt (PFE): Netzwerkinfrastruktur-Studie und IT-Park-Überwachung am CHU Habib Bourguiba (Prometheus & Grafana).",
+          "Netzwerkarchitektur, Windows/Linux-Serveradministration, Virtualisierung (VMware) und Sicherheitsgrundlagen.",
+          "Vom Krankenhaus-IT-Dienst validiert — alle Projektziele erreicht.",
+        ],
+        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Emblem_of_Tunisia.svg/80px-Emblem_of_Tunisia.svg.png",
       },
     ],
   },

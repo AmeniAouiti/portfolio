@@ -35,18 +35,18 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
 
   return (
     <div
-      className="fixed inset-0 z-100 flex items-center justify-center bg-black/80 p-3 sm:p-6 backdrop-blur-md"
+      className="fixed inset-0 z-[100] flex items-end justify-center bg-black/80 p-0 backdrop-blur-md sm:items-center sm:p-4 md:p-6"
       onClick={onClose}
     >
       <motion.div
         initial={{ opacity: 0, scale: 0.96, y: 24 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.35, ease: [0.215, 0.61, 0.355, 1] }}
-        className="relative flex max-h-[92vh] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-[0_24px_80px_-16px_rgba(0,0,0,0.7)]"
+        className="relative flex max-h-[min(92dvh,100vh)] w-full max-w-3xl flex-col overflow-hidden rounded-t-3xl border border-border bg-card shadow-[0_24px_80px_-16px_rgba(0,0,0,0.7)] sm:rounded-3xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Preview */}
-        <div className="relative h-56 shrink-0 overflow-hidden border-b border-border sm:h-72 md:h-80">
+        <div className="relative h-44 shrink-0 overflow-hidden border-b border-border sm:h-56 md:h-72 lg:h-80">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
           <ProjectPreview project={project} variant="modal" />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-card to-transparent" />

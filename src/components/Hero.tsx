@@ -18,7 +18,7 @@ const Hero = () => {
 
   return (
     <section className="relative flex min-h-dvh items-center overflow-x-hidden overflow-y-visible bg-transparent">
-      <div className="relative z-10 mx-auto w-full max-w-4xl px-5 pt-24 pb-20 sm:px-6 sm:pt-28 md:px-10 lg:px-14">
+      <div className="relative z-10 mx-auto w-full max-w-4xl px-4 pb-24 pt-20 safe-top sm:px-6 sm:pb-20 sm:pt-24 md:px-10 lg:px-14">
         <div className="flex flex-col items-start text-left">
           <motion.p
             key={`job-${locale.hero.jobTitle}`}
@@ -32,7 +32,7 @@ const Hero = () => {
           <motion.h1
             {...fadeUp}
             transition={{ duration: 0.55, delay: 0.05, ease: [0.215, 0.61, 0.355, 1] }}
-            className="mb-4 text-[clamp(2.75rem,10vw,5.25rem)] font-bold leading-[0.92] tracking-[-0.055em] text-text sm:mb-5"
+            className="mb-4 text-[clamp(2.25rem,9vw,5.25rem)] font-bold leading-[0.92] tracking-[-0.055em] text-text sm:mb-5"
           >
             {name}
           </motion.h1>
@@ -98,7 +98,7 @@ const Hero = () => {
           e.preventDefault();
           document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
         }}
-        className="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-1 text-text-dim/70 transition-colors hover:text-primary"
+        className="absolute bottom-5 left-1/2 z-20 hidden -translate-x-1/2 flex-col items-center gap-1 text-text-dim/70 transition-colors hover:text-primary min-[500px]:flex safe-bottom"
         aria-label="Scroll to about"
       >
         <motion.span

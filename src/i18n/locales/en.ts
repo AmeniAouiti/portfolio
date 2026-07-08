@@ -26,6 +26,7 @@ export const en: LocaleContent = {
     journey: "Journey",
     devops: "DevOps",
     certifications: "Certs",
+    education: "Education",
     contact: "Contact",
     cv: "CV",
     downloadCv: "Download CV",
@@ -262,7 +263,7 @@ export const en: LocaleContent = {
     ],
   },
   experience: {
-    chapter: "CHAPTER 04 — JOURNEY",
+    chapter: "CHAPTER 05 — JOURNEY",
     title: "Experience Timeline",
     viewAttestation: "View certificate",
     attestationNote: "View only — downloading, printing and capturing are disabled.",
@@ -388,6 +389,45 @@ export const en: LocaleContent = {
         logo: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Logo_OACA.png",
         attestation: "/certifications/oaca-attestation-stage.png",
         attestation_label: "Internship certificate",
+      },
+    ],
+  },
+  education: {
+    chapter: "CHAPTER 04 — EDUCATION",
+    title: "Academic Background",
+    subtitle: "Engineering and applied sciences training in computer science and information technology.",
+    data: [
+      {
+        id: 1,
+        period: "2023 — 2026",
+        school: "ESPRIT",
+        location: "El Ghazala, Ariana",
+        degree: "National Engineering Diploma in Computer Science",
+        type_label: "Engineering degree",
+        description:
+          "Private Higher School of Engineering and Technology — specialization in software engineering, full-stack development, distributed systems and modern software architecture.",
+        highlights: [
+          "End-of-studies project (PFE): Sabeel — intelligent digital ecosystem for integrated Umrah service management (BrandWood&CO).",
+          "Mobile & web development, backend architecture, cloud deployment and Agile/Scrum project management.",
+          "Focus on scalable applications, DevOps practices and emerging technologies (AI, real-time systems).",
+        ],
+        logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/4/4e/Esprit_logo.svg/120px-Esprit_logo.svg.png",
+      },
+      {
+        id: 2,
+        period: "2020 — 2023",
+        school: "ISET Sfax",
+        location: "Sfax, Tunisia",
+        degree: "Bachelor's Degree in Information Technology",
+        type_label: "Applied licence",
+        description:
+          "Higher Institute of Technological Studies — applied training in information technology, networks, system administration and software fundamentals.",
+        highlights: [
+          "Final-year project (PFE): network infrastructure study and IT park monitoring at CHU Habib Bourguiba (Prometheus & Grafana).",
+          "Network architecture, Windows/Linux server administration, virtualization (VMware) and security fundamentals.",
+          "Project validated by the hospital IT department — all objectives achieved.",
+        ],
+        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Emblem_of_Tunisia.svg/80px-Emblem_of_Tunisia.svg.png",
       },
     ],
   },

@@ -97,13 +97,13 @@ export const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="relative border-t border-border bg-transparent pt-20 pb-24">
+    <section id="contact" className="relative border-t border-border bg-transparent px-4 pt-16 pb-20 safe-bottom sm:px-6 sm:pt-20 sm:pb-24">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(0,242,254,0.06),transparent_55%)]" />
 
-      <div className="relative mx-auto max-w-2xl px-6">
+      <div className="relative mx-auto max-w-2xl">
         <ScrollReveal className="mb-10 text-center">
           <div className="mb-3 text-xs uppercase tracking-[3px] text-primary">{locale.nav.contact}</div>
-          <SectionTitle className="mb-4 text-4xl font-semibold tracking-tighter text-text sm:text-5xl">
+          <SectionTitle className="mb-4 text-3xl font-semibold tracking-tighter text-text sm:text-4xl md:text-5xl">
             {t.getInTouch}
           </SectionTitle>
           <p className="mx-auto max-w-lg text-sm leading-relaxed text-text-dim sm:text-base">{t.ctaText}</p>

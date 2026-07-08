@@ -19,7 +19,7 @@ export const Footer = () => {
 
   return (
     <footer className="border-t border-border bg-bg transition-colors duration-300">
-      <div className="max-w-6xl mx-auto px-6 py-8">
+      <div className="mx-auto max-w-6xl px-4 py-8 safe-bottom sm:px-6">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
           <p className="text-sm text-text-dim text-center sm:text-left">
             {f.copyright.replace("{year}", String(year))}{" "}

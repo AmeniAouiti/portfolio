@@ -8,6 +8,7 @@ import AboutSection from "../components/AboutSection";
 import TechStackSection from "../components/TechStackSection";
 import ProjectsSection from "../components/ProjectsSection";
 import ExperienceSection from "../components/ExperienceSection";
+import EducationSection from "../components/EducationSection";
 import DevOpsSection from "../components/DevOpsSection";
 import CertificationsSection from "../components/CertificationsSection";
 import ContactSection from "../components/ContactSection";
@@ -21,6 +22,7 @@ export const LandingPage = () => {
 
   const projects = locale.projects.data;
   const experiences = locale.experience.data;
+  const education = locale.education.data;
 
   return (
     <div className="relative overflow-x-hidden bg-bg text-text">
@@ -30,6 +32,7 @@ export const LandingPage = () => {
         <Navbar />
         <Hero />
         <AboutSection />
+        <EducationSection items={education} />
         <ExperienceSection experiences={experiences} />
         <ProjectsSection projects={projects} onOpenProject={setSelectedProject} />
         <TechStackSection />

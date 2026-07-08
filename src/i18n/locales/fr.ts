@@ -13,6 +13,7 @@ export const fr: LocaleContent = {
     journey: "Parcours",
     devops: "DevOps",
     certifications: "Certifs",
+    education: "Formation",
     contact: "Contact",
     cv: "CV",
     downloadCv: "Télécharger CV",
@@ -249,7 +250,7 @@ export const fr: LocaleContent = {
     ],
   },
   experience: {
-    chapter: "CHAPITRE 04 — PARCOURS",
+    chapter: "CHAPITRE 05 — PARCOURS",
     title: "Expérience professionnelle",
     viewAttestation: "Voir l'attestation",
     attestationNote: "Consultation uniquement — le téléchargement, l'impression et la capture sont désactivés.",
@@ -375,6 +376,45 @@ export const fr: LocaleContent = {
         logo: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Logo_OACA.png",
         attestation: "/certifications/oaca-attestation-stage.png",
         attestation_label: "Attestation de stage",
+      },
+    ],
+  },
+  education: {
+    chapter: "CHAPITRE 04 — FORMATION",
+    title: "Parcours académique",
+    subtitle: "Formation en ingénierie informatique et technologies de l'information.",
+    data: [
+      {
+        id: 1,
+        period: "2023 — 2026",
+        school: "ESPRIT",
+        location: "El Ghazala, Ariana",
+        degree: "Diplôme National d'Ingénieur en Informatique",
+        type_label: "Cycle ingénieur",
+        description:
+          "École Privée des Hautes Études d'Ingénierie et de Technologie — spécialisation en génie logiciel, développement full-stack, systèmes distribués et architecture logicielle moderne.",
+        highlights: [
+          "Projet de fin d'études (PFE) : Sabeel — écosystème numérique intelligent pour la gestion intégrée des services Omra (BrandWood&CO).",
+          "Développement mobile & web, architecture backend, déploiement cloud et gestion de projet Agile/Scrum.",
+          "Focus sur les applications scalables, les pratiques DevOps et les technologies émergentes (IA, systèmes temps réel).",
+        ],
+        logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/4/4e/Esprit_logo.svg/120px-Esprit_logo.svg.png",
+      },
+      {
+        id: 2,
+        period: "2020 — 2023",
+        school: "ISET Sfax",
+        location: "Sfax, Tunisie",
+        degree: "Licence Appliquée en Technologies de l'Information",
+        type_label: "Licence appliquée",
+        description:
+          "Institut Supérieur des Études Technologiques — formation appliquée en technologies de l'information, réseaux, administration système et fondamentaux du développement logiciel.",
+        highlights: [
+          "Projet de fin d'études (PFE) : étude du réseau informatique et supervision du parc IT au CHU Habib Bourguiba (Prometheus & Grafana).",
+          "Architecture réseau, administration serveurs Windows/Linux, virtualisation (VMware) et fondamentaux de la sécurité.",
+          "Projet validé par le service informatique de l'hôpital — objectifs entièrement atteints.",
+        ],
+        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Emblem_of_Tunisia.svg/80px-Emblem_of_Tunisia.svg.png",
       },
     ],
   },

@@ -14,6 +14,18 @@ export interface Project {
   type_label?: string;
 }
 
+export interface Education {
+  id: number;
+  school: string;
+  degree: string;
+  period: string;
+  location: string;
+  description?: string;
+  highlights?: string[];
+  logo?: string;
+  type_label?: string;
+}
+
 export interface Experience {
   id: number;
   company: string;

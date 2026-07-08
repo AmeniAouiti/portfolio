@@ -30,12 +30,12 @@ export const TechStackSection = () => {
 
   return (
     <section id="tech" className="relative overflow-hidden border-b border-border bg-transparent py-16 sm:py-20">
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <ScrollReveal>
           <div className="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
             <div>
               <div className="mb-2 text-xs uppercase tracking-[3px] text-primary">{t.chapter}</div>
-              <SectionTitle className="text-4xl font-semibold tracking-tighter text-text sm:text-5xl">
+              <SectionTitle className="text-3xl font-semibold tracking-tighter text-text sm:text-4xl md:text-5xl">
                 {t.title}
               </SectionTitle>
             </div>

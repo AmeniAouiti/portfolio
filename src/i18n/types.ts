@@ -1,4 +1,4 @@
-import type { Project, Experience } from "../types";
+import type { Project, Experience, Education } from "../types";
 
 export type Language = "en" | "fr" | "de";
 
@@ -11,6 +11,7 @@ export interface LocaleContent {
     journey: string;
     devops: string;
     certifications: string;
+    education: string;
     contact: string;
     cv: string;
     downloadCv: string;
@@ -57,6 +58,12 @@ export interface LocaleContent {
     attestationNote: string;
     attestationClose: string;
     data: Experience[];
+  };
+  education: {
+    chapter: string;
+    title: string;
+    subtitle: string;
+    data: Education[];
   };
   devops: {
     chapter: string;

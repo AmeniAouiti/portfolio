@@ -17,12 +17,14 @@ export const ExperienceSection = ({ experiences }: ExperienceSectionProps) => {
   const [attestation, setAttestation] = useState<{ src: string; title: string } | null>(null);
 
   return (
-    <section id="experience" className="relative border-t border-border bg-transparent py-20 sm:py-24">
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="uppercase tracking-[3px] text-xs mb-4 text-primary">{t.chapter}</div>
-        <SectionTitle className="mb-16 text-6xl font-semibold tracking-tighter text-text">{t.title}</SectionTitle>
+    <section id="experience" className="relative border-t border-border bg-transparent py-16 sm:py-20 md:py-24">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6">
+        <div className="mb-4 text-xs uppercase tracking-[3px] text-primary">{t.chapter}</div>
+        <SectionTitle className="mb-10 text-3xl font-semibold tracking-tighter text-text sm:mb-12 sm:text-4xl md:mb-16 md:text-5xl lg:text-6xl">
+          {t.title}
+        </SectionTitle>
 
-        <div className="space-y-16 relative before:absolute before:left-6 before:top-6 before:bottom-6 before:w-px before:bg-border">
+        <div className="relative space-y-12 sm:space-y-16 before:absolute before:left-4 before:top-6 before:bottom-6 before:w-px before:bg-border sm:before:left-6">
           {experiences.map((exp, index) => {
             const isContinuation =
               index > 0 && experiences[index - 1].company === exp.company;
@@ -33,13 +35,13 @@ export const ExperienceSection = ({ experiences }: ExperienceSectionProps) => {
                 initial={{ opacity: 0, x: -40 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className={`relative pl-20 ${isContinuation ? "-mt-6" : ""}`}
+                className={`relative pl-14 sm:pl-20 ${isContinuation ? "-mt-6" : ""}`}
               >
                 <div
                   className={`timeline-dot absolute left-0 flex items-center justify-center overflow-hidden border border-primary/60 shadow-lg shadow-primary/5 ${
                     isContinuation
                       ? "top-3 h-5 w-5 rounded-full bg-primary/20 border-primary/40"
-                      : "top-2 h-14 w-14 rounded-2xl bg-card p-2"
+                      : "top-2 h-11 w-11 rounded-2xl bg-card p-1.5 sm:h-14 sm:w-14 sm:p-2"
                   }`}
                 >
                   {!isContinuation && exp.logo ? (
@@ -69,14 +71,14 @@ export const ExperienceSection = ({ experiences }: ExperienceSectionProps) => {
 
                 {!isContinuation && (
                   <div className="mb-3 flex flex-wrap items-center gap-3">
-                    <div className="text-2xl font-semibold text-text">{exp.company}</div>
+                    <div className="text-xl font-semibold text-text sm:text-2xl">{exp.company}</div>
                     <div className="rounded border border-border px-3 py-0.5 text-xs text-text-dim">
                       {exp.location}
                     </div>
                   </div>
                 )}
 
-                <div className={`text-xl text-text ${isContinuation ? "mb-4 mt-1" : "mb-4"}`}>
+                <div className={`text-lg text-text sm:text-xl ${isContinuation ? "mb-4 mt-1" : "mb-4"}`}>
                   {exp.role}
                 </div>
 

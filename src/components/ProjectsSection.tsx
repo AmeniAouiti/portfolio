@@ -33,7 +33,7 @@ export const ProjectsSection = ({ projects, onOpenProject }: ProjectsSectionProp
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
           {projects.map((project, index) => (
             <motion.article
               key={project.id}
@@ -49,7 +49,7 @@ export const ProjectsSection = ({ projects, onOpenProject }: ProjectsSectionProp
               onClick={() => onOpenProject(project)}
               className="group cursor-pointer overflow-hidden rounded-2xl border border-border bg-card/70 shadow-sm backdrop-blur-sm transition-colors duration-300 hover:border-primary/40 hover:shadow-[0_12px_40px_-12px_rgba(var(--primary-rgb),0.25)]"
             >
-              <div className="relative group/preview h-48 overflow-hidden sm:h-52 lg:h-56">
+              <div className="relative group/preview h-40 overflow-hidden sm:h-48 md:h-52 lg:h-56">
                 <div className="absolute inset-0 z-10 bg-gradient-to-t from-card via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
                 <ProjectPreview project={project} variant="card" />
                 <div className="absolute inset-0 z-20 flex items-center justify-center bg-primary/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
@@ -73,7 +73,7 @@ export const ProjectsSection = ({ projects, onOpenProject }: ProjectsSectionProp
                     .map((tech: string, i: number) => (
                       <span
                         key={i}
-                        className="rounded-md border border-primary/15 bg-primary/10 px-1.5 py-0.5 text-[9px] font-semibold text-primary/90 sm:text-[10px]"
+                        className="rounded-md border border-primary/15 bg-primary/10 px-1.5 py-0.5 text-[10px] font-semibold text-primary/90 sm:text-[11px]"
                       >
                         {tech}
                       </span>
@@ -81,12 +81,12 @@ export const ProjectsSection = ({ projects, onOpenProject }: ProjectsSectionProp
                 </div>
 
                 <div className="flex items-center justify-between gap-2 border-t border-border pt-2">
-                  <div className="min-w-0 text-[9px] leading-snug text-text-dim line-clamp-2 sm:text-[10px]">
+                  <div className="min-w-0 text-[10px] leading-snug text-text-dim line-clamp-2 sm:text-[11px]">
                     {project.period && <div className="text-text/70">{project.period}</div>}
                     {project.type_label && <div>{project.type_label}</div>}
                     {!project.period && !project.type_label && <div>{project.category}</div>}
                   </div>
-                  <span className="inline-flex shrink-0 items-center gap-0.5 text-[9px] font-semibold text-text-dim transition-all duration-300 group-hover:gap-1 group-hover:text-primary sm:text-[10px]">
+                  <span className="inline-flex shrink-0 items-center gap-0.5 text-[10px] font-semibold text-text-dim transition-all duration-300 group-hover:gap-1 group-hover:text-primary sm:text-[11px]">
                     <ArrowUpRight size={12} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                   </span>
                 </div>

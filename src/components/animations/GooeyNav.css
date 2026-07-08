@@ -236,3 +236,21 @@
     opacity: 0;
   }
 }
+
+@media (max-width: 1400px) {
+  .gooey-nav-container nav ul {
+    gap: 0.2em;
+  }
+
+  .gooey-nav-container nav ul li {
+    font-size: 0.75rem;
+  }
+
+  .gooey-nav-container nav ul li a {
+    padding: 0.4em 0.65em;
+  }
+
+  .gooey-nav-container .effect.text {
+    font-size: 0.75rem;
+  }
+}
