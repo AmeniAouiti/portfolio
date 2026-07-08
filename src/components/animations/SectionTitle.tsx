@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 interface SectionTitleProps {
   children: string;
@@ -8,30 +9,33 @@ interface SectionTitleProps {
 
 const SectionTitle = ({ children, className = "", as: Tag = "h3" }: SectionTitleProps) => {
   const reduceMotion = useReducedMotion();
-  const words = children.split(" ");
+  const { language } = useLanguage();
+  const words = children.split(/\s+/).filter(Boolean);
 
-  if (reduceMotion) {
+  if (reduceMotion || words.length === 0) {
     return <Tag className={className}>{children}</Tag>;
   }
 
   return (
     <motion.div
+      key={`${language}-${children}`}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-80px" }}
-      variants={{ visible: { transition: { staggerChildren: 0.07, delayChildren: 0.05 } } }}
+      animate="visible"
+      variants={{
+        hidden: {},
+        visible: { transition: { staggerChildren: 0.045, delayChildren: 0.02 } },
+      }}
     >
       <Tag className={className}>
         {words.map((word, index) => (
-          <span key={`${word}-${index}`} className="mr-[0.22em] inline-block overflow-hidden">
+          <span key={`${index}-${word}`} className="mr-[0.22em] inline-block overflow-hidden align-bottom">
             <motion.span
               variants={{
-                hidden: { y: "115%", opacity: 0, rotateX: 40 },
+                hidden: { y: "105%", opacity: 0 },
                 visible: {
                   y: 0,
                   opacity: 1,
-                  rotateX: 0,
-                  transition: { duration: 0.65, ease: [0.215, 0.61, 0.355, 1] },
+                  transition: { duration: 0.4, ease: [0.215, 0.61, 0.355, 1] },
                 },
               }}
               className="inline-block"
