@@ -255,6 +255,8 @@ export const de: LocaleContent = {
     viewAttestation: "Bescheinigung ansehen",
     attestationNote: "Nur zur Ansicht — Herunterladen, Drucken und Erfassen sind deaktiviert.",
     attestationClose: "Schließen",
+    attestationLoadError: "Dieses Dokument kann in der Vorschau nicht angezeigt werden.",
+    attestationOpenNewTab: "In neuem Tab öffnen",
     data: [
       {
         id: 1,

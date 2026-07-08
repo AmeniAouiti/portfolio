@@ -268,6 +268,8 @@ export const en: LocaleContent = {
     viewAttestation: "View certificate",
     attestationNote: "View only — downloading, printing and capturing are disabled.",
     attestationClose: "Close",
+    attestationLoadError: "Unable to display this document in the viewer.",
+    attestationOpenNewTab: "Open in a new tab",
     data: [
       {
         id: 1,

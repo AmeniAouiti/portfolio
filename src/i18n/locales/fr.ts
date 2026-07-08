@@ -255,6 +255,8 @@ export const fr: LocaleContent = {
     viewAttestation: "Voir l'attestation",
     attestationNote: "Consultation uniquement — le téléchargement, l'impression et la capture sont désactivés.",
     attestationClose: "Fermer",
+    attestationLoadError: "Impossible d'afficher ce document dans la visionneuse.",
+    attestationOpenNewTab: "Ouvrir dans un nouvel onglet",
     data: [
       {
         id: 1,

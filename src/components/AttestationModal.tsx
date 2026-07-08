@@ -14,6 +14,7 @@ const AttestationModal = ({ open, onClose, src, title }: AttestationModalProps) 
   const { locale } = useLanguage();
   const t = locale.experience;
   const [blurred, setBlurred] = useState(false);
+  const [loadError, setLoadError] = useState(false);
 
   useEffect(() => {
     if (!open) return;
@@ -53,10 +54,13 @@ const AttestationModal = ({ open, onClose, src, title }: AttestationModalProps) 
     };
   }, [open, onClose]);
 
+  useEffect(() => {
+    if (open) setLoadError(false);
+  }, [open, src]);
+
   const isImage = src ? /\.(png|jpe?g|webp|gif)$/i.test(src) : false;
-  const viewerSrc = src && !isImage
-    ? `${src}#toolbar=0&navpanes=0&scrollbar=0&statusbar=0&view=FitH`
-    : src;
+  const isPdf = src ? /\.pdf$/i.test(src) : false;
+  const viewerSrc = src && isPdf ? `${src}#toolbar=0&navpanes=0&view=FitH` : src;
 
   const viewerClass = `transition-all duration-300 ${blurred ? "blur-xl" : ""}`;
 
@@ -108,20 +112,55 @@ const AttestationModal = ({ open, onClose, src, title }: AttestationModalProps) 
                     src={viewerSrc}
                     alt={title ?? t.viewAttestation}
                     draggable={false}
+                    onError={() => setLoadError(true)}
                     className={`max-h-full w-full max-w-full object-contain ${viewerClass}`}
                   />
                 </div>
               )}
-              {viewerSrc && !isImage && (
+
+              {viewerSrc && isPdf && !loadError && (
+                <object
+                  key={viewerSrc}
+                  data={viewerSrc}
+                  type="application/pdf"
+                  title={title ?? t.viewAttestation}
+                  className={`h-full min-h-[60vh] w-full ${viewerClass}`}
+                  onError={() => setLoadError(true)}
+                >
+                  <iframe
+                    src={viewerSrc}
+                    title={title ?? t.viewAttestation}
+                    className={`h-full min-h-[60vh] w-full ${viewerClass}`}
+                    onError={() => setLoadError(true)}
+                  />
+                </object>
+              )}
+
+              {viewerSrc && !isImage && !isPdf && (
                 <iframe
                   key={viewerSrc}
                   src={viewerSrc}
                   title={title ?? t.viewAttestation}
-                  className={`h-full w-full ${viewerClass}`}
+                  className={`h-full min-h-[60vh] w-full ${viewerClass}`}
+                  onError={() => setLoadError(true)}
                 />
               )}
 
-              <div className="absolute inset-0" aria-hidden />
+              {loadError && (
+                <div className="flex min-h-[50vh] flex-col items-center justify-center gap-3 p-6 text-center">
+                  <p className="text-sm text-text-dim">{t.attestationLoadError}</p>
+                  {src && (
+                    <a
+                      href={src}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary hover:bg-primary/20"
+                    >
+                      {t.attestationOpenNewTab}
+                    </a>
+                  )}
+                </div>
+              )}
 
               {/* Watermark */}
               <div className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden">
@@ -131,7 +170,7 @@ const AttestationModal = ({ open, onClose, src, title }: AttestationModalProps) 
               </div>
 
               {blurred && (
-                <div className="absolute inset-0 flex items-center justify-center bg-bg/80">
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-bg/80">
                   <div className="flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm text-text-dim">
                     <Lock size={14} /> {t.attestationNote}
                   </div>
