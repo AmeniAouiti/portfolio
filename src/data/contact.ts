@@ -1,5 +1,5 @@
 export const CONTACT_INFO = {
-  email: "ameni.aouiti81@gmail.com",
+  email: "aouiti.ameni99@gmail.com",
   phone: "+216 58 932 240",
   phoneHref: "tel:+21658932240",
   address: "Cité El Ghazela, Ariana, Tunisia",
